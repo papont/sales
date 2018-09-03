@@ -4,5 +4,6 @@
     <persistence-unit name="sales"
                       transaction-type="RESOURCE_LOCAL">
         <class>com.company.sales.entity.Customer</class>
+        <class>com.company.sales.entity.Order</class>
     </persistence-unit>
 </persistence>
