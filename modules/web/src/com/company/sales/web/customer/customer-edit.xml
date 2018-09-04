@@ -10,7 +10,8 @@
                     class="com.company.sales.entity.Customer"
                     view="_local"/>
         <collectionDatasource id="ordersDs"
-                              class="com.company.sales.entity.Order">
+                              class="com.company.sales.entity.Order"
+                              view="_local">
             <query>
                 <![CDATA[select e from sales$Order e
 where e.customer.id = :ds$customerDs
@@ -31,8 +32,8 @@ order by e.date]]>
         </fieldGroup>
         <label value="Orders"/>
         <table id="ordersTable"
-               height="100px"
-               width="350px">
+               height="200px"
+               width="100%">
             <columns>
                 <column id="date"/>
                 <column id="amount"/>
