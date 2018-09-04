@@ -4,5 +4,6 @@
           insertBefore="administration">
         <item screen="sales$Customer.browse"/>
         <item screen="sales$Order.browse"/>
+        <item screen="sales$Product.browse"/>
     </menu>
 </menu-config>

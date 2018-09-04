@@ -14,6 +14,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.chile.core.annotations.Composition;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.global.DeletePolicy;
+import java.util.List;
+import javax.persistence.OneToMany;
 
 @Table(name = "SALES_ORDER")
 @Entity(name = "sales$Order")
@@ -25,6 +30,11 @@ public class Order extends StandardEntity {
     @Column(name = "DATE_", nullable = false)
     protected Date date;
 
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToMany(mappedBy = "order")
+    protected List<OrderLine> lines;
+
     @Column(name = "AMOUNT")
     protected BigDecimal amount;
 
@@ -32,6 +42,15 @@ public class Order extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CUSTOMER_ID")
     protected Customer customer;
+
+    public void setLines(List<OrderLine> lines) {
+        this.lines = lines;
+    }
+
+    public List<OrderLine> getLines() {
+        return lines;
+    }
+
 
     public void setDate(Date date) {
         this.date = date;

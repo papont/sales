@@ -5,5 +5,21 @@
           name="order-with-customer">
         <property name="customer"
                   view="_minimal"/>
+        <property name="lines"
+                  view="_local"/>
+    </view>
+    <view class="com.company.sales.entity.OrderLine"
+          extends="_local"
+          name="orderLine-width-product">
+        <property name="product"
+                  view="_local"/>
+    </view>
+    <view class="com.company.sales.entity.Order"
+          extends="_local"
+          name="order-edit">
+        <property name="lines"
+                  view="orderLine-width-product"/>
+        <property name="customer"
+                  view="_minimal"/>
     </view>
 </views>

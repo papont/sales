@@ -8,4 +8,10 @@
             template="com/company/sales/web/order/order-browse.xml"/>
     <screen id="sales$Order.edit"
             template="com/company/sales/web/order/order-edit.xml"/>
+    <screen id="sales$Product.browse"
+            template="com/company/sales/web/product/product-browse.xml"/>
+    <screen id="sales$Product.edit"
+            template="com/company/sales/web/product/product-edit.xml"/>
+    <screen id="sales$OrderLine.edit"
+            template="com/company/sales/web/orderline/order-line-edit.xml"/>
 </screen-config>
